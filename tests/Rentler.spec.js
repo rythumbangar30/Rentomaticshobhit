@@ -237,6 +237,8 @@ if (Acreage != null) {
            var test = page.locator("a[class='next-page is-active']");
 
            if (count < TotalProperties) {
+              await page.waitForTimeout(3000);  
+              await page.reload();
               await test.click();
               await page.waitForNavigation({
                  timeout: 60000,
